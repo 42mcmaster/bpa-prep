@@ -1,4 +1,6 @@
-# 415 Fundamentals of Web Design Reference Guide
+# 360 HTML and CSS Coding Reference Guide
+
+*This event was called 415 Fundamentals of Web Design before 2026-27. Same content, new number.*
 
 ## Essential HTML5 and CSS for BPA Competition
 
