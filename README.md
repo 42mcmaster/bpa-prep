@@ -9,6 +9,8 @@ Everything for Friday BPA work is here. Find your event below, open its folder, 
 3. Do the work, then play the Gimkit.
 4. In the Google Classroom **BPA Friday** assignment, write a private comment saying what you finished, for example: *Linux week 2 done, C# week 1 done*.
 
+**Turning in builds.** Form weeks grade themselves. For anything you build (a web page, a program), make **one GitHub repository named `bpaPrep`** in your account and push each build to its own folder inside it (`html_week01`, `csharp_week01`, and so on). The week file tells you the folder name. Include the repo link in your first private comment.
+
 Each week is one of four kinds, in a cycle:
 
 | Kind | What you do |

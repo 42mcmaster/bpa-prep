@@ -10,9 +10,11 @@
 
 The 2026 regional was a pre-built Windows Forms app where you code the logic behind 12 buttons: string reversal, remove vowels, loan payment, unit conversion, and so on. Put an Input / Processing / Output comment on every major block.
 
-## Fridays
+## Weeks
 
-| Date | File | What |
+Do the weeks in order, one per Friday. Keep track of which week you are on. Builds are pushed to your own `bpaPrep` GitHub repo (see the week file).
+
+| Week | File | What |
 |---|---|---|
-| Sep 11 | [week01_ButtonLogic](week01_ButtonLogic/) | Button Logic Trainer: problem, starter, rubric |
-| later | coming | |
+| Week 1 | [week01.md](week01.md) | Timed build from a problem, starter, and rubric |
+| Week 2+ | coming | |

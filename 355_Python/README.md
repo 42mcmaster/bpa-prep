@@ -10,10 +10,12 @@
 
 The 2026 regional was a tournament manager: validated input, nested lists, a leaderboard with totals and averages, a results file with the date and time, and documented functions.
 
-## Fridays
+## Weeks
 
-| Date | File | What |
+Do the weeks in order, one per Friday. Keep track of which week you are on. Builds are pushed to your own `bpaPrep` GitHub repo (see the week file).
+
+| Week | File | What |
 |---|---|---|
-| Sep 11 | [week01_QuizTracker](week01_QuizTracker/) | Club Quiz Tracker: problem, starter, rubric |
+| Week 1 | [week01.md](week01.md) | Timed build from a problem, starter, and rubric |
 | any time | [practice](practice/) | Three extra timed practice tasks |
-| later | coming | |
+| Week 2+ | coming | |
