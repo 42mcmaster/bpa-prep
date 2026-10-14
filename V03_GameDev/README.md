@@ -5,13 +5,17 @@
 
 **Deadline:** Register by **December 1, 2026** ($20 per team). Submit by **January 15, 2027**, 11:59 PM Eastern, as one PDF with a link to the project files at upload.bpa.org.
 **AI policy:** Allowed with citation (Level 2). Fill out the AI Usage and Documentation Form.
-Team captain submits. Start with a one-page design doc: engine, who does what, and the minimum game that would run.
+Team captain submits.
+
+**Engine:** Godot 4 (GDScript). See [Godot_Install_Guide.md](Godot_Install_Guide.md) and [Endless_Runner_Tutorials.md](Endless_Runner_Tutorials.md).
 
 ## Study guide
 
 No study guide. Read the official event guidelines in the BPA Google Classroom under the right category folder.
 
-## Fridays
+## Weeks
 
-| Date | File | What |
+| Week | File | What |
 |---|---|---|
+| Week 1 | [week01.md](week01.md) | Kickoff: read the topic, install Godot, repo, roles, design doc |
+| Weeks 2-9 | see the milestone table in week01.md | Build |
