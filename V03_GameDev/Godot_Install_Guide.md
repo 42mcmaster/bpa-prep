@@ -12,10 +12,9 @@ Godot is the game engine for the V03 Afterburn project. It is free, there is no 
 1. Go to **https://godotengine.org/download/windows/**
 2. Under **Godot Engine 4.7.2** (or whatever the current stable version is), find the **Standard** section. Click **Windows x86_64**. This is the normal 64-bit version.
    - **Do not** download the **.NET** version. That one is for C# and needs extra software installed. We are using GDScript, which is built in.
-   - If the lab PC is an older 32-bit machine, use **x86_32** instead. Almost none are.
-3. A zip file downloads, about 60 MB. It lands in your Downloads folder.
+3. A zip file downloads, about 60 MB.
 
-**Everyone on the team must use the same version.** Write the version number in the team design doc. A project opened in a newer Godot gets converted and may not open in the older one.
+**Everyone on the team must use the same version.** A project opened in a newer Godot gets converted and may not open in the older one.
 
 ---
 
@@ -44,7 +43,7 @@ If you got the gray window, you are done. Godot works on this machine.
 
 ---
 
-## Part 4: System Requirements
+## Part 4: System Requirements (we should be fine in MCCC SE lab but just in case you are using this somewhere else)
 
 From the Godot download page:
 - Recommended: Vulkan 1.0 compatible graphics
