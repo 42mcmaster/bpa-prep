@@ -11,9 +11,12 @@ Answer 20 questions about Linux using the **printed study guide**. The point of 
 
 ---
 
+Intro Video - Find some intro videos for Linux... please share good ones with Mr. McMaster
+
+
 ## Part 1: The Form (graded)
 
-**Open the Form:** FORM LINK HERE
+**Open the Form:** https://docs.google.com/forms/d/e/1FAIpQLSf6NHUCpye8893Lk-9KcQWDZAelRfuZFGzXvR1EwSdIpNJFAw/viewform
 
 **Part 1 — Find It in the Guide (10 questions, 1 point each)**
 Each question tells you which section of the guide to look in. Go there, find the answer, pick it.
