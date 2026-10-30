@@ -5,7 +5,7 @@ Everything for Friday BPA work is here. Find your event below, open its folder, 
 ## How Fridays work
 
 1. Open the folder for each event you signed up for.
-2. Open your **next** week file (`week01.md`, then `week02.md`, and so on). It tells you what to do and has the links. You keep track of which week you are on.
+2. Open your **next** week file (`week01.md`, then `week02.md`, and so on). It tells you what to do and has the links. You keep track of which week you are on. **Programming events (Python, C++, Java, C#) use steps instead of weeks** — open your next step folder (`step01_...`, `step02_...`).
 3. Do the work, then play the Gimkit.
 4. In the Google Classroom **BPA Friday** assignment, write a private comment saying what you finished, for example: *Linux week 2 done, C# week 1 done*.
 
@@ -36,6 +36,8 @@ Each week is one of four kinds, in a cycle:
 | 235 Business Law and Ethics | [235_BusinessLaw](235_BusinessLaw/) | Yes | Reynolds |
 
 ## Programming events (build a program in 90 minutes)
+
+The four programming events (Python, C++, Java, C#) use **12 steps** instead of week files. Each step teaches one or two new ideas and ends with a challenge program you push to your `bpaPrep` repo. The challenges are the same in every language. Start with **[Programming_Steps_Overview.md](Programming_Steps_Overview.md)**, then your event's folder.
 
 | Event | Folder | Reference materials allowed? | Students |
 |---|---|---|---|
