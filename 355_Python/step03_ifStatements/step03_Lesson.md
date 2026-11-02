@@ -213,6 +213,7 @@ rating = 3
 if rating >= 1 and rating <= 5:
     print("Valid rating")
 # Python also lets you write the same thing like a math inequality
+# This is shorthand for: rating >= 1 and rating <= 5.
 if 1 <= rating <= 5:
     print("Also valid")
 ```
