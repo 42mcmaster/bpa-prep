@@ -170,7 +170,7 @@ The variable after `for` (`number` here) gets the next value each time through t
 
 The "stops before" rule trips everyone up at first. `range(1, 6)` does **not** include 6. To count 1 to N, use `range(1, N + 1)`.
 
-If you just want to repeat something N times and don't need the number, `for count in range(N):` is the usual way.
+The loop variable can be used inside the loop. Here `row` is used to do the math:
 
 ```python
 # Output: a small times table using the loop variable
@@ -185,6 +185,63 @@ It prints:
 2 x 7 = 14
 3 x 7 = 21
 ```
+
+### Repeating something a certain number of times
+
+Sometimes you don't need the loop variable at all. You just want the code to run a certain number of times. Use `range(times)`, where `times` is a number or a variable holding a number. The loop runs that many times.
+
+The loop still needs a variable name after `for` (Python requires it), but nothing inside the loop has to use it.
+
+<!-- input: 4 -->
+```python
+# Input: ask how many times to cheer
+times = int(input("How many cheers? "))
+
+# Output: repeat the cheer that many times
+for count in range(times):
+    print("Go team!")                 # count is never used - it is only there because for needs a variable
+```
+
+It prints (user typed `4`):
+
+```text
+How many cheers? 4
+Go team!
+Go team!
+Go team!
+Go team!
+```
+
+Whatever number the user types, the loop runs that many times.
+
+This is useful when you need to ask for a set number of inputs:
+
+<!-- input: 3|90|85|100 -->
+```python
+# Processing: a running total starts at 0
+total = 0
+
+# Input: ask how many scores, then ask for that many
+how_many = int(input("How many scores? "))
+for count in range(how_many):
+    score = int(input("Score: "))
+    total = total + score
+
+# Output
+print(f"Total of {how_many} scores: {total}")
+```
+
+It prints (user typed `3`, `90`, `85`, `100`):
+
+```text
+How many scores? 3
+Score: 90
+Score: 85
+Score: 100
+Total of 3 scores: 275
+```
+
+You may also see `for _ in range(times):` in other people's code. The underscore means "I'm not using this variable." It works the same as `count`.
 
 **Try it**
 1. Use a `for` loop to print the even numbers from 2 to 20.
@@ -210,6 +267,8 @@ It prints:
 ```text
 Points: ######
 ```
+
+This uses the "repeat a certain number of times" loop from above. `points` is how many times it runs, and `count` is never used.
 
 (Python can also do `"#" * points`, which you saw in Step 1. The challenge asks you to use a `for` loop on purpose — graders want to see that you can write the loop.)
 
