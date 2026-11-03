@@ -170,6 +170,30 @@ The variable after `for` (`number` here) gets the next value each time through t
 
 The "stops before" rule trips everyone up at first. `range(1, 6)` does **not** include 6. To count 1 to N, use `range(1, N + 1)`.
 
+N just stands for "whatever number you want to stop at." In a real program it is usually a variable. Adding 1 makes up for the "stops before" rule, so the last number is included:
+
+<!-- input: 4 -->
+```python
+# Input: ask how high to count
+last = int(input("Count up to: "))
+
+# Output: last is the N here, so range(1, last + 1) counts 1 to last
+for number in range(1, last + 1):
+    print(number)
+```
+
+It prints (user typed `4`):
+
+```text
+Count up to: 4
+1
+2
+3
+4
+```
+
+The user typed 4, so the loop uses `range(1, 5)`, which gives 1, 2, 3, 4. Without the `+ 1`, it would be `range(1, 4)` and stop at 3.
+
 The loop variable can be used inside the loop. Here `row` is used to do the math:
 
 ```python
