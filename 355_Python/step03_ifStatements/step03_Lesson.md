@@ -73,13 +73,16 @@ An `if` runs a block of code **only when** its condition is `True`.
 
 <!-- input: 0 -->
 ```python
-# Input: how many tickets are left
-tickets_left = int(input("Tickets left: "))
+# The program already knows how many are left
+tickets_left = 4
 
-# Processing and Output: warn only when sold out
-if tickets_left == 0:
-    print("Sold out!")
-    print("Check back next week.")
+# Input: how many tickets the user wants
+wanted = int(input("How many tickets? "))
+
+# Processing and Output: warn only when there aren't enough
+if wanted > tickets_left:
+    print("Sorry, only", tickets_left, "tickets are left.")
+    print("Please choose a smaller number.")
 print("Thanks for checking.")
 ```
 
@@ -210,6 +213,7 @@ rating = 3
 if rating >= 1 and rating <= 5:
     print("Valid rating")
 # Python also lets you write the same thing like a math inequality
+# This is shorthand for: rating >= 1 and rating <= 5.
 if 1 <= rating <= 5:
     print("Also valid")
 ```
