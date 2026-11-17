@@ -9,10 +9,11 @@ The 2026 regional was a tournament manager: validated input, nested lists, a lea
 
 - **[Setup_Guide.md](Setup_Guide.md)** — install Python, run your first program in IDLE, read an error, push to `bpaPrep`.
 - **Study guide:** [355_Python_Programming_Reference_Guide.md](355_Python_Programming_Reference_Guide.md) — print it.
+- **Common mistakes:** [Steps01-03_CommonMistakes.md](Steps01-03_CommonMistakes.md) — the mistakes students make most in Steps 1–3.
 
 ## The 12 steps
 
-Do the steps in order. Each step from Step 4 on has three files:
+Do the steps in order. Each step has three files:
 
 1. **Lesson** — a short walkthrough of the new skills, one piece at a time.
 2. **Practice** — 10 to 13 short problems, plus one harder Challenge at the end. Some problems review earlier steps.
@@ -20,9 +21,9 @@ Do the steps in order. Each step from Step 4 on has three files:
 
 | Step | Folder | What you learn | Practice challenge |
 |---|---|---|---|
-| 1 | [step01_outputAndComments](step01_outputAndComments/step01_Lesson.md) | `print`, escape sequences, comments, the header comment, running in IDLE, reading a syntax error | Event Welcome Screen |
-| 2 | [step02_variablesAndInput](step02_variablesAndInput/step02_Lesson.md) | variables, data types, `input`, `int`/`float`, math, constants, money with 2 decimals | Snack Bar Order |
-| 3 | [step03_ifStatements](step03_ifStatements/step03_Lesson.md) | comparisons, `if`/`elif`/`else`, `and`/`or`/`not`, nested if, comparing text | Grade Checker |
+| 1 | [step01_outputAndComments](step01_outputAndComments/step01_Lesson.md) | `print`, escape sequences, comments, the header comment, running in IDLE, reading a syntax error | Club Flyer |
+| 2 | [step02_variablesAndInput](step02_variablesAndInput/step02_Lesson.md) | variables, data types, `input`, `int`/`float`, math, constants, money with 2 decimals | Movie Night Snacks |
+| 3 | [step03_ifStatements](step03_ifStatements/step03_Lesson.md) | comparisons, `if`/`elif`/`else`, `and`/`or`/`not`, nested if, comparing text | Gym Day Pass |
 | 4 | [step04_loops](step04_loops/step04_Lesson.md) | `while` and `for` loops, `range`, counters, running totals, asking again until the answer is good | Class Score Summary |
 | 5 | [step05_functions](step05_functions/step05_Lesson.md) | `def`, parameters, `return`, the function comment, `main()` | Pizza Order |
 | 6 | [step06_listsAndArrays](step06_listsAndArrays/step06_Lesson.md) | lists, indexes, loops over lists, totals, highest and lowest by hand, sorting | Daily Steps Tracker |
@@ -39,6 +40,9 @@ The **[bpaBuilds](bpaBuilds/)** folder has the bigger, BPA-style programs. Each 
 
 | Builds | Start them after | Includes |
 |---|---|---|
+| [Step 1 builds](bpaBuilds/build01_outputAndComments.md) | Step 3 | Event Welcome Screen, Class Schedule Card, Food Truck Menu Board, Program Help Screen |
+| [Step 2 builds](bpaBuilds/build02_variablesAndInput.md) | Step 3 | Snack Bar Order, Pizza Party Planner, Road Trip Calculator, Paycheck Calculator |
+| [Step 3 builds](bpaBuilds/build03_ifStatements.md) | Step 3 | Grade Checker, Movie Ticket Price, Shipping Calculator, BPA Eligibility Checker |
 | [Step 4 builds](bpaBuilds/build04_loops.md) | Step 7 | Number Guessing Game, Times Table Builder, Savings Goal Tracker, Rock Paper Scissors |
 | [Step 5 builds](bpaBuilds/build05_functions.md) | Step 7 | Snack Bar with Functions, Temperature Converter, Class Grade Report, Phone Bill Calculator |
 | [Step 6 builds](bpaBuilds/build06_listsAndArrays.md) | Step 7 | Score Stats, Weekly Temperature Log, Shopping List, Test Curve |
@@ -59,5 +63,6 @@ The **[bpaBuilds](bpaBuilds/)** folder has the bigger, BPA-style programs. Each 
 
 - Do your **next** step. You keep track of which step you're on.
 - Lesson first, then the practice. Use the study guide whenever you get stuck.
-- After Step 7, start working on the builds alongside Steps 8–11.
+- After Step 3, start the Step 1–3 builds alongside Steps 4–7.
+- After Step 7, start the Step 4–7 builds alongside Steps 8–11.
 - After Step 11, do the timed builds in Step 12 until the regional.

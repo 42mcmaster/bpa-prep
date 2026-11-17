@@ -1,20 +1,49 @@
-# Step 01 Tasks — Output and Comments (Python)
+# Builds for Step 01 — Output and Comments (Python)
 
-**Do these after the [Step 1 lesson](step01_Lesson.md).** The lesson's Event Welcome Screen is the walkthrough. These three tasks are extra practice with the same skills.
+These are BPA-style programs that use the Step 1 skills together with everything before it. They are bigger than the practice problems, and closer to what the BPA test asks for.
 
-Every task is graded the way BPA grades: the output has to match **exactly**. Count the spaces, check the capital letters, and check the punctuation.
+**Do these after you finish Steps 1–3 (lessons and practice).** Use the [Step 1 Study Guide](../step01_outputAndComments/step01_StudyGuide.md) for help.
 
 ## Table of Contents
-- [Task A: Class Schedule Card](#task-a-class-schedule-card)
-- [Task B: Food Truck Menu Board](#task-b-food-truck-menu-board)
-- [Task C: Program Help Screen](#task-c-program-help-screen)
+- [Build 1A: Event Welcome Screen](#build-1a-event-welcome-screen)
+- [Build 1B: Class Schedule Card](#build-1b-class-schedule-card)
+- [Build 1C: Food Truck Menu Board](#build-1c-food-truck-menu-board)
+- [Build 1D: Program Help Screen](#build-1d-program-help-screen)
 - [Turn it in](#turn-it-in)
 - [Checklist](#checklist)
 
 ---
 
-## Task A: Class Schedule Card
+## Build 1A: Event Welcome Screen
+Write a program that prints the welcome screen for MCCC Game Night.
 
+**Requirements**
+1. Header comment at the top (name, date, program name, description).
+2. Print exactly the welcome screen below.
+3. Use at least one `\n` inside a single print statement to make two lines.
+4. An `Output:` comment (in your language's comment style) above the printing block.
+
+**Sample run (exact)**
+```
+==============================
+   MCCC GAME NIGHT
+   Friday, 6:00 PM - Room 112
+==============================
+Events tonight:
+  1. Board Games
+  2. Video Game Tournament
+  3. Trivia
+Bring a friend!
+```
+
+**Hints**
+- The line of `=` signs is 30 characters long. You can type them, or use `"=" * 30`.
+- `MCCC GAME NIGHT` and the `Friday` line each start with 3 spaces. The numbered events each start with 2 spaces.
+- For requirement 3, pick any two lines that are next to each other and print them with one `print` and a `\n` between them.
+
+---
+
+## Build 1B: Class Schedule Card
 Write a program that prints a daily schedule card for the IT Academy.
 
 **Requirements**
@@ -48,8 +77,7 @@ Room 112 - "Bring your laptop!"
 
 ---
 
-## Task B: Food Truck Menu Board
-
+## Build 1C: Food Truck Menu Board
 Write a program that prints the menu board for the Byte Bites food truck.
 
 **Requirements**
@@ -91,8 +119,7 @@ Ask about our 'combo' deals!
 
 ---
 
-## Task C: Program Help Screen
-
+## Build 1D: Program Help Screen
 Command-line programs print a help screen when you type `-h`. Write a program that prints the help screen for a pretend tool called `gradebook`.
 
 **Requirements**
@@ -142,15 +169,20 @@ Tip: options are case sensitive.
 ---
 
 ## Turn it in
-1. In your `bpaPrep` repo, use your `python_step01` folder.
-2. Save the tasks as `step01_taskA.py`, `step01_taskB.py`, and `step01_taskC.py`.
+1. In your `bpaPrep` repo, make a folder named `python_builds` (one folder for all builds).
+2. Save the builds as `build01A.py`, `build01B.py`, `build01C.py`, and `build01D.py`.
 3. Commit and push with GitHub Desktop.
-4. Private comment on the Classroom **BPA Friday** assignment: *Python step 1 tasks done*.
+4. Turn in the link on the Classroom assignment.
 
 ## Checklist
+- [ ] Program runs with no errors
+- [ ] Output matches the sample run (count the spaces)
+- [ ] Header comment with name, date, program, description
+- [ ] Input / Processing / Output comments (for this step, an `Output:` comment)
+- [ ] At least one `print` uses `\n` to make two lines
+- [ ] Pushed to `bpaPrep/python_builds`
 - [ ] All three programs run with no errors
 - [ ] Every sample run matches exactly (count the spaces)
 - [ ] Repeated characters use `*` with a number, not typed out
 - [ ] Header comment and `Output:` comments in each file
-- [ ] Task C's debug line is commented out and does not print
-- [ ] Pushed to `bpaPrep/python_step01`
+- [ ] Build 1D's debug line is commented out and does not print

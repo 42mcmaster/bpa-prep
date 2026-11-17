@@ -1,21 +1,68 @@
-# Step 03 Tasks — If Statements (Python)
+# Builds for Step 03 — If Statements (Python)
 
-**Do these after the [Step 3 lesson](step03_Lesson.md).** The lesson's Grade Checker is the walkthrough. These three tasks are extra practice with the same skills.
-**Time:** about two class periods for all three. Task A is the shortest; Task C is the longest.
+These are BPA-style programs that use the Step 3 skills together with everything before it. They are bigger than the practice problems, and closer to what the BPA test asks for.
 
-Each task also uses skills from Steps 1 and 2: header comments, `input`, `int` and `float`, named constants, and money with 2 decimal places.
+**Do these after you finish Steps 1–3 (lessons and practice).** Use the [Step 3 Study Guide](../step03_ifStatements/step03_StudyGuide.md) for help.
 
 ## Table of Contents
-- [Task A: Movie Ticket Price](#task-a-movie-ticket-price)
-- [Task B: Shipping Calculator](#task-b-shipping-calculator)
-- [Task C: BPA Eligibility Checker](#task-c-bpa-eligibility-checker)
+- [Build 3A: Grade Checker](#build-3a-grade-checker)
+- [Build 3B: Movie Ticket Price](#build-3b-movie-ticket-price)
+- [Build 3C: Shipping Calculator](#build-3c-shipping-calculator)
+- [Build 3D: BPA Eligibility Checker](#build-3d-bpa-eligibility-checker)
 - [Turn it in](#turn-it-in)
 - [Checklist](#checklist)
 
 ---
 
-## Task A: Movie Ticket Price
+## Build 3A: Grade Checker
+Write a program that asks for a student's name and score, then prints their letter grade and whether they passed.
 
+**Requirements**
+1. Header comment.
+2. Ask for the student name and a score (whole number) with the exact prompts.
+3. If the score is below 0 or above 100, print `Error: score must be 0 to 100.` and nothing else. Use a logical operator (`or`) in this check.
+4. Otherwise print `<name> got a <letter>.` — 90–100 A, 80–89 B, 70–79 C, 60–69 D, below 60 F. Use "an" instead of "a" before A and F (`got an A.`, `got an F.`).
+5. Then print `<name> passed.` for 60 or higher, otherwise `<name> did not pass.`
+6. If the score is exactly 100, also print `Perfect score!` as the last line.
+7. Input / Processing / Output comments.
+
+**Sample run 1**
+```
+Student name: Taylor
+Score (0-100): 87
+Taylor got a B.
+Taylor passed.
+```
+**Sample run 2**
+```
+Student name: Sam
+Score (0-100): 105
+Error: score must be 0 to 100.
+```
+**Sample run 3**
+```
+Student name: Riley
+Score (0-100): 100
+Riley got an A.
+Riley passed.
+Perfect score!
+```
+**Sample run 4**
+```
+Student name: Max
+Score (0-100): 42
+Max got an F.
+Max did not pass.
+```
+
+**Hints**
+- Do the range check first with `if ... or ...:`. Put everything else inside its `else:` block.
+- Store the letter in a variable (like `letter = "B"`) with an `if`/`elif` chain. Then decide `"a"` or `"an"` with a second, small `if`. Then print once using an f-string.
+- Test all four sample runs. Then test the edges: 0, 59, 60, 89, 90, -1.
+
+---
+
+## Build 3B: Movie Ticket Price
 Write a program that figures out the price of one movie ticket.
 
 **Requirements**
@@ -102,8 +149,7 @@ Error: age must be 0 to 120.
 
 ---
 
-## Task B: Shipping Calculator
-
+## Build 3C: Shipping Calculator
 Write a program that figures out the shipping cost and delivery time for an online order.
 
 **Requirements**
@@ -215,8 +261,7 @@ Error: zone must be 1, 2, or 3.
 
 ---
 
-## Task C: BPA Eligibility Checker
-
+## Build 3D: BPA Eligibility Checker
 Write a program a chapter advisor could use to check whether a member can compete at BPA.
 
 **Requirements**
@@ -321,15 +366,22 @@ Error: grade must be 9 to 12.
 ---
 
 ## Turn it in
-1. In your `bpaPrep` repo, use your `python_step03` folder.
-2. Save the tasks as `step03_taskA.py`, `step03_taskB.py`, and `step03_taskC.py`.
+1. In your `bpaPrep` repo, make a folder named `python_builds` (one folder for all builds).
+2. Save the builds as `build03A.py`, `build03B.py`, `build03C.py`, and `build03D.py`.
 3. Commit and push with GitHub Desktop.
-4. Private comment on the Classroom **BPA Friday** assignment: *Python step 3 tasks done*.
+4. Turn in the link on the Classroom assignment.
 
 ## Checklist
+- [ ] Program runs with no errors
+- [ ] Output matches all four sample runs
+- [ ] Header comment with name, date, program, description
+- [ ] Input / Processing / Output comments
+- [ ] Range check uses `or`
+- [ ] "an A" and "an F", "a B", "a C", "a D"
+- [ ] `Perfect score!` only for exactly 100, as the last line
+- [ ] Pushed to `bpaPrep/python_builds`
 - [ ] All three programs run with no errors
 - [ ] Every sample run matches exactly (count the spaces)
-- [ ] I tested the extra inputs listed under each task
+- [ ] I tested the extra inputs listed under each build
 - [ ] Header comment and named constants at the top of each file
 - [ ] Input / Processing / Output comments in each file
-- [ ] Pushed to `bpaPrep/python_step03`

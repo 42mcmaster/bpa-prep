@@ -1,23 +1,56 @@
-# Step 02 Tasks — Variables and Input (Python)
+# Builds for Step 02 — Variables and Input (Python)
 
-**Do these after the [Step 2 lesson](step02_Lesson.md).** The lesson's Snack Bar Order is the walkthrough. These three tasks are extra practice with the same skills.
+These are BPA-style programs that use the Step 2 skills together with everything before it. They are bigger than the practice problems, and closer to what the BPA test asks for.
 
-Each task also uses Step 1 skills: the header comment, printing exact output, and `"=" * 32`-style lines.
-
-There is no input checking yet. If someone types letters where a number belongs, the program crashes. That is fine for now.
+**Do these after you finish Steps 1–3 (lessons and practice).** Use the [Step 2 Study Guide](../step02_variablesAndInput/step02_StudyGuide.md) for help.
 
 ## Table of Contents
-- [Task A: Pizza Party Planner](#task-a-pizza-party-planner)
-- [Task B: Road Trip Calculator](#task-b-road-trip-calculator)
-- [Task C: Paycheck Calculator](#task-c-paycheck-calculator)
+- [Build 2A: Snack Bar Order](#build-2a-snack-bar-order)
+- [Build 2B: Pizza Party Planner](#build-2b-pizza-party-planner)
+- [Build 2C: Road Trip Calculator](#build-2c-road-trip-calculator)
+- [Build 2D: Paycheck Calculator](#build-2d-paycheck-calculator)
 - [A note about pennies](#a-note-about-pennies)
 - [Turn it in](#turn-it-in)
 - [Checklist](#checklist)
 
 ---
 
-## Task A: Pizza Party Planner
+## Build 2A: Snack Bar Order
+Write a program that takes one order at the MCCC snack bar and prints a receipt.
 
+**Requirements**
+1. Header comment.
+2. Ask for the customer's name, the item, the price (decimal), and the quantity (whole number) using the exact prompts below.
+3. Store the tax rate in a named constant (`TAX_RATE = 0.07`).
+4. Calculate subtotal (price × quantity), tax (subtotal × TAX_RATE), and total (subtotal + tax).
+5. Print the receipt exactly as shown, money with 2 decimal places.
+6. Input / Processing / Output comments on each block.
+
+**Sample run (exact)**
+```
+Customer name: Jordan
+Item: Pretzel
+Price: 2.75
+Quantity: 3
+
+--- Receipt for Jordan ---
+Item:      Pretzel
+Quantity:  3
+Subtotal:  $8.25
+Tax (7%):  $0.58
+Total:     $8.83
+```
+
+There is no input checking yet. If the user types letters for the price, the program will crash. That's fine for now — Step 10 makes it crash-proof.
+
+**Hints**
+- Four `input()` lines. The price uses `float()`, the quantity uses `int()`.
+- The blank line after `Quantity: 3` is a `print()` with nothing in it.
+- Check your math with a calculator: 2.75 × 3 = 8.25; 8.25 × 0.07 = 0.5775, which shows as `0.58`.
+
+---
+
+## Build 2B: Pizza Party Planner
 Write a program that plans the pizza for a party: how many whole pizzas, how many extra slices, and what it costs.
 
 **Requirements**
@@ -77,8 +110,7 @@ Cost per person:  $3.67
 
 ---
 
-## Task B: Road Trip Calculator
-
+## Build 2C: Road Trip Calculator
 Write a program that figures out gas, cost per person, and driving time for a road trip.
 
 **Requirements**
@@ -136,8 +168,7 @@ Round trip gas:   $14.13
 
 ---
 
-## Task C: Paycheck Calculator
-
+## Build 2D: Paycheck Calculator
 Write a program that prints a weekly pay stub with taxes taken out, plus yearly totals.
 
 **Requirements**
@@ -225,19 +256,27 @@ Yearly net:   $17528.35
 ---
 
 ## A note about pennies
-
 Your program does math with the full numbers (like 26.505), and only rounds when it prints. So if you add up the **printed** numbers yourself, you can be off by a penny. That is normal, and the sample runs were made the same way. Do the math with the full values, and format only in the `print` lines, and your output will match.
 
+---
+
 ## Turn it in
-1. In your `bpaPrep` repo, use your `python_step02` folder.
-2. Save the tasks as `step02_taskA.py`, `step02_taskB.py`, and `step02_taskC.py`.
+1. In your `bpaPrep` repo, make a folder named `python_builds` (one folder for all builds).
+2. Save the builds as `build02A.py`, `build02B.py`, `build02C.py`, and `build02D.py`.
 3. Commit and push with GitHub Desktop.
-4. Private comment on the Classroom **BPA Friday** assignment: *Python step 2 tasks done*.
+4. Turn in the link on the Classroom assignment.
 
 ## Checklist
+- [ ] Program runs with no errors
+- [ ] Output matches the sample run
+- [ ] Header comment with name, date, program, description
+- [ ] Input / Processing / Output comments
+- [ ] `TAX_RATE = 0.07` is a named constant near the top
+- [ ] Price uses `float()`, quantity uses `int()`
+- [ ] All money shows 2 decimal places with `$`
+- [ ] Pushed to `bpaPrep/python_builds`
 - [ ] All three programs run with no errors
 - [ ] Every sample run matches exactly (count the spaces)
-- [ ] I tested the extra inputs listed under Task A
+- [ ] I tested the extra inputs listed under Build 2B
 - [ ] Every rate and price is a named constant in ALL_CAPS at the top
 - [ ] Input / Processing / Output comments in each file
-- [ ] Pushed to `bpaPrep/python_step02`
