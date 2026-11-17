@@ -1,155 +1,51 @@
 # Step 04 — Loops (Python)
 
-**What you'll build:** Number Guessing Game — the computer picks a secret number and the player guesses until they get it, then can play again.
-**Time:** about one class period (2 hours).
+This lesson teaches the two kinds of loops one piece at a time. Each part has a short example and a quick "Try it."
+
+**Time:** about one class period.
+**After this lesson:** do the [Step 4 Practice](step04_Practice.md) problems. For more examples, use the [Step 4 Study Guide](step04_StudyGuide.md).
 
 ## Table of Contents
 - [What you'll learn](#what-youll-learn)
-- [Why loops](#why-loops)
-- [The while loop](#the-while-loop)
-- [Counters and running totals](#counters-and-running-totals)
-- [A loop that asks again](#a-loop-that-asks-again)
-- [The for loop and range](#the-for-loop-and-range)
-- [Building a string in a loop](#building-a-string-in-a-loop)
-- [break and continue](#break-and-continue)
-- [Random numbers](#random-numbers)
-- [A play again loop](#a-play-again-loop)
-- [Testing a program that uses random numbers](#testing-a-program-that-uses-random-numbers)
+- [Part 1: What a loop is](#part-1-what-a-loop-is)
+- [Part 2: The while loop](#part-2-the-while-loop)
+- [Part 3: Running totals and counters](#part-3-running-totals-and-counters)
+- [Part 4: Keep asking until the user says stop](#part-4-keep-asking-until-the-user-says-stop)
+- [Part 5: Ask again until the answer is good](#part-5-ask-again-until-the-answer-is-good)
+- [Part 6: The for loop and range](#part-6-the-for-loop-and-range)
+- [Part 7: Repeat something a set number of times](#part-7-repeat-something-a-set-number-of-times)
+- [Part 8: Building a string with a loop](#part-8-building-a-string-with-a-loop)
+- [Which loop should I use?](#which-loop-should-i-use)
 - [Common mistakes](#common-mistakes)
-- [How this shows up at BPA](#how-this-shows-up-at-bpa)
-- [The challenge: Number Guessing Game](#the-challenge-number-guessing-game)
-- [Turn it in](#turn-it-in)
-- [Checklist](#checklist)
+- [Next steps](#next-steps)
 
 ## What you'll learn
-- How a `while` loop repeats while a condition is `True`
-- How to count with a loop counter and add up a running total
-- How to keep asking until the user gives an answer in range
+- How a `while` loop repeats while something is true
+- How to add up numbers and count things in a loop
+- How to keep asking the user until they say stop, or until they give a good answer
 - How a `for` loop counts with `range()`
 - How to build a string one piece at a time
-- What `break` and `continue` do
-- How to make random numbers with the `random` module
-- How to put one loop inside another for a "play again" feature
-- How to test a program whose answer is random
 
-## Why loops
+---
 
-Without loops, printing the numbers 1 to 100 takes 100 `print` lines. With a loop it takes 2. A **loop** repeats a block of code. Every BPA program uses loops: for asking again after bad input, for going through every player, for running a menu until the user quits.
+## Part 1: What a loop is
 
-Python has two loops:
-
-| Loop | Use it when... |
-|---|---|
-| `while` | you **don't know** how many times it will repeat ("keep asking until they get it right") |
-| `for` | you **do know** how many times, or you want to go through every item in a list ("do this 5 times") |
-
-## The while loop
-
-A `while` loop works like an `if` that keeps repeating. It checks the condition; if `True`, it runs the block, then goes back up and checks again. When the condition is `False`, the loop ends and the program continues below it.
+A **loop** repeats code. Without a loop, printing 1 to 5 takes 5 lines:
 
 ```python
-# Processing and Output: count down from 3
-countdown = 3
-while countdown > 0:
-    print(countdown)
-    countdown = countdown - 1     # without this line the loop never ends
-print("Go!")
+print(1)
+print(2)
+print(3)
+print(4)
+print(5)
 ```
 
-It prints:
-
-```text
-3
-2
-1
-Go!
-```
-
-Step by step: `countdown` is 3 → `3 > 0` is True → print 3, make it 2 → `2 > 0` True → print 2, make it 1 → print 1, make it 0 → `0 > 0` is False → loop ends → print `Go!`.
-
-Same rules as `if`: colon at the end, block indented.
-
-**The infinite loop.** If nothing inside the loop ever makes the condition `False`, the loop runs forever. In IDLE, press **Ctrl+C** in the Shell window to stop it.
-
-## Counters and running totals
-
-Two patterns you'll use in almost every program:
-
-- A **counter** starts at 0 and goes up by 1 each time something happens: `count = count + 1`
-- A **running total** starts at 0 and has a value added each time: `total = total + value`
-
-Python also has a short way to write these: `count += 1` means the same as `count = count + 1`. Both are fine. These lessons mostly use the long way because it is easier to read.
-
-<!-- input: 20|15|0 -->
-```python
-# Processing: a counter and a running total start at 0
-count = 0
-total = 0
-
-# Input: keep reading amounts until the user types 0
-amount = int(input("Amount (0 to stop): "))
-while amount != 0:
-    count = count + 1
-    total = total + amount
-    amount = int(input("Amount (0 to stop): "))
-
-# Output
-print(f"You entered {count} amounts. Total: {total}")
-```
-
-It prints (user typed `20`, `15`, `0`):
-
-```text
-Amount (0 to stop): 20
-Amount (0 to stop): 15
-Amount (0 to stop): 0
-You entered 2 amounts. Total: 35
-```
-
-The `0` here is called a **sentinel** — a special value that means "stop." Notice the pattern: ask once **before** the loop, then ask again at the **bottom** of the loop. That way the condition always checks the newest answer.
-
-## A loop that asks again
-
-A `while` loop is how you keep asking until the user types something in range:
-
-<!-- input: 9|0|4 -->
-```python
-# Input: ask for a team size from 1 to 5
-team_size = int(input("Team size (1-5): "))
-
-# Processing: while the answer is out of range, complain and ask again
-while team_size < 1 or team_size > 5:
-    print("Please enter 1 to 5.")
-    team_size = int(input("Team size (1-5): "))
-
-# Output: we only get here with a good answer
-print(f"Team of {team_size} saved.")
-```
-
-It prints (user typed `9`, `0`, `4`):
-
-```text
-Team size (1-5): 9
-Please enter 1 to 5.
-Team size (1-5): 0
-Please enter 1 to 5.
-Team size (1-5): 4
-Team of 4 saved.
-```
-
-This is the same `or` range check from Step 3, inside a `while` instead of an `if`. This exact pattern is in almost every BPA test. (Typing letters still crashes it. Step 10 fixes that.)
-
-## The for loop and range
-
-A `for` loop goes through a sequence of values, one at a time. `range()` makes a sequence of whole numbers.
+With a loop, it takes 2 lines, and it would still take 2 lines for 1 to 1,000:
 
 ```python
-# Output: print 1 through 5
 for number in range(1, 6):
     print(number)
 ```
-
-It prints:
 
 ```text
 1
@@ -159,50 +55,162 @@ It prints:
 5
 ```
 
-The variable after `for` (`number` here) gets the next value each time through the loop. You don't have to add 1 to it yourself — the `for` loop does it.
+Every loop has a line that ends with a colon `:`, and an **indented block** under it. The indented lines are the ones that repeat.
 
-| What you type | Numbers you get | Notes |
-|---|---|---|
-| `range(5)` | 0, 1, 2, 3, 4 | starts at 0; stops **before** 5; repeats 5 times |
-| `range(1, 6)` | 1, 2, 3, 4, 5 | starts at 1; stops **before** 6 |
-| `range(0, 10, 2)` | 0, 2, 4, 6, 8 | third number is the step |
-| `range(5, 0, -1)` | 5, 4, 3, 2, 1 | counts down |
+---
 
-The "stops before" rule trips everyone up at first. `range(1, 6)` does **not** include 6. To count 1 to N, use `range(1, N + 1)`.
+## Part 2: The while loop
 
-N just stands for "whatever number you want to stop at." In a real program it is usually a variable. Adding 1 makes up for the "stops before" rule, so the last number is included:
+A `while` loop keeps going **while** its condition is True. It checks the condition, runs the block, then goes back up and checks again.
 
-<!-- input: 4 -->
 ```python
-# Input: ask how high to count
-last = int(input("Count up to: "))
+count = 1                 # 1. start the variable before the loop
 
-# Output: last is the N here, so range(1, last + 1) counts 1 to last
-for number in range(1, last + 1):
-    print(number)
+while count <= 5:         # 2. check it: keep going while count is 5 or less
+    print(count)
+    count = count + 1     # 3. change it inside the loop
+
+print("Done")             # not indented: runs once, after the loop
 ```
 
-It prints (user typed `4`):
-
 ```text
-Count up to: 4
 1
 2
 3
 4
+5
+Done
 ```
 
-The user typed 4, so the loop uses `range(1, 5)`, which gives 1, 2, 3, 4. Without the `+ 1`, it would be `range(1, 4)` and stop at 3.
+Walk through it: `count` is 1, so `1 <= 5` is True. Print 1, then count becomes 2. Check again... When count becomes 6, `6 <= 5` is False, so the loop stops and `Done` prints.
 
-The loop variable can be used inside the loop. Here `row` is used to do the math:
+**Forget the "change" line and the loop never stops.** It just prints `1` forever. Press **Ctrl+C** to stop it.
+
+**Try it:** Change the example to count from 1 to 10. Then make it count from 10 down to 1. (Start at 10, check `count >= 1`, and subtract 1.)
+
+---
+
+## Part 3: Running totals and counters
+
+A **running total** adds numbers up as the loop goes. It starts at 0 **before** the loop.
 
 ```python
-# Output: a small times table using the loop variable
-for row in range(1, 4):
-    print(f"{row} x 7 = {row * 7}")
+total = 0                 # start at 0, before the loop
+number = 1
+
+while number <= 4:
+    total = total + number    # add this number to the total
+    number = number + 1
+
+print(f"The total is {total}")
 ```
 
-It prints:
+```text
+The total is 10
+```
+
+That's 1 + 2 + 3 + 4. A **counter** is the same idea, but it adds 1 each time something happens: `count = count + 1`.
+
+**Try it:** Change the example to add up 1 through 100. You should get 5050.
+
+---
+
+## Part 4: Keep asking until the user says stop
+
+A `while` loop can keep asking until the user types a special "stop" value, like `0`. That value is called a **sentinel**.
+
+The pattern: ask **once before** the loop, then ask **again at the bottom** of the loop.
+
+<!-- input: 5|12|3|0 -->
+```python
+total = 0
+
+number = int(input("Enter a number (0 to stop): "))     # ask before the loop
+
+while number != 0:                                     # != means "is not equal to"
+    total = total + number
+    number = int(input("Enter a number (0 to stop): ")) # ask again, at the bottom
+
+print(f"The total is {total}")
+```
+
+```text
+Enter a number (0 to stop): 5
+Enter a number (0 to stop): 12
+Enter a number (0 to stop): 3
+Enter a number (0 to stop): 0
+The total is 20
+```
+
+- The question **before** the loop gives the `while` line something to check.
+- The question **inside** the loop gets the next number. Without it, the number never changes and the loop never ends.
+
+**Try it:** Add a counter so the program also prints `You entered 3 numbers.`
+
+---
+
+## Part 5: Ask again until the answer is good
+
+This is the same pattern, but the loop keeps going while the answer is **bad**. It's on every BPA Python test.
+
+<!-- input: 15|0|8 -->
+```python
+rating = int(input("Rate the movie (1-10): "))
+
+while rating < 1 or rating > 10:                # True when the rating is bad
+    print("Please enter 1 to 10.")
+    rating = int(input("Rate the movie (1-10): "))
+
+print(f"Your rating: {rating}")                 # only gets here with a good answer
+```
+
+```text
+Rate the movie (1-10): 15
+Please enter 1 to 10.
+Rate the movie (1-10): 0
+Please enter 1 to 10.
+Rate the movie (1-10): 8
+Your rating: 8
+```
+
+Use `or`. A number can't be below 1 **and** above 10 at the same time.
+
+**Try it:** Change it to ask for an age from 0 to 120.
+
+---
+
+## Part 6: The for loop and range
+
+A `for` loop goes through a set of numbers. `range()` makes the numbers. **The `for` loop moves to the next number on its own.** You don't add 1 yourself.
+
+```python
+for number in range(1, 6):
+    print(number)
+```
+
+```text
+1
+2
+3
+4
+5
+```
+
+`range(1, 6)` starts at 1 and stops **before** 6. To count from 1 to 10, use `range(1, 11)`.
+
+| What you type | Numbers you get |
+|---|---|
+| `range(5)` | 0, 1, 2, 3, 4 |
+| `range(1, 6)` | 1, 2, 3, 4, 5 |
+| `range(2, 11, 2)` | 2, 4, 6, 8, 10 (the third number is the step) |
+| `range(5, 0, -1)` | 5, 4, 3, 2, 1 (a negative step counts down) |
+
+You can use the loop variable inside the loop:
+
+```python
+for i in range(1, 4):
+    print(f"{i} x 7 = {i * 7}")
+```
 
 ```text
 1 x 7 = 7
@@ -210,305 +218,83 @@ It prints:
 3 x 7 = 21
 ```
 
-### Repeating something a certain number of times
+**Try it:** Print the even numbers from 2 to 20. Then add up 1 to 100 with a `for` loop instead of a `while` loop.
 
-Sometimes you don't need the loop variable at all. You just want the code to run a certain number of times. Use `range(times)`, where `times` is a number or a variable holding a number. The loop runs that many times.
+---
 
-The loop still needs a variable name after `for` (Python requires it), but nothing inside the loop has to use it.
+## Part 7: Repeat something a set number of times
 
-<!-- input: 4 -->
+`range(5)` runs the loop 5 times. This is how you ask for a set number of answers. **The `input()` goes inside the loop**, so it asks once each time.
+
+<!-- input: 90|85|100 -->
 ```python
-# Input: ask how many times to cheer
-times = int(input("How many cheers? "))
-
-# Output: repeat the cheer that many times
-for count in range(times):
-    print("Go team!")                 # count is never used - it is only there because for needs a variable
-```
-
-It prints (user typed `4`):
-
-```text
-How many cheers? 4
-Go team!
-Go team!
-Go team!
-Go team!
-```
-
-Whatever number the user types, the loop runs that many times.
-
-This is useful when you need to ask for a set number of inputs:
-
-<!-- input: 3|90|85|100 -->
-```python
-# Processing: a running total starts at 0
 total = 0
 
-# Input: ask how many scores, then ask for that many
-how_many = int(input("How many scores? "))
-for count in range(how_many):
-    score = int(input("Score: "))
+for count in range(3):                      # ask 3 times
+    score = int(input("Test score: "))      # inside the loop
     total = total + score
 
-# Output
-print(f"Total of {how_many} scores: {total}")
+average = total / 3                         # after the loop, once all scores are in
+print(f"Average: {average:.1f}")
 ```
-
-It prints (user typed `3`, `90`, `85`, `100`):
 
 ```text
-How many scores? 3
-Score: 90
-Score: 85
-Score: 100
-Total of 3 scores: 275
+Test score: 90
+Test score: 85
+Test score: 100
+Average: 91.7
 ```
 
-You may also see `for _ in range(times):` in other people's code. The underscore means "I'm not using this variable." It works the same as `count`.
+Work out the average **after** the loop. Inside the loop, not all the scores are in yet.
 
-**Try it**
-1. Use a `for` loop to print the even numbers from 2 to 20.
-2. Ask the user for a number N, then print the total of 1 + 2 + ... + N using a `for` loop and a running total.
+**Try it:** Change it to ask for 5 scores.
 
-## Building a string in a loop
+---
 
-You can start with an empty string `""` and add to it each time through a loop. This is how you make a bar chart out of characters.
+## Part 8: Building a string with a loop
 
+Start with an empty string `""` and add to it each time through the loop.
+
+<!-- input: 6 -->
 ```python
-# Processing: build a bar of # characters, one per point
-points = 6
-bar = ""
+points = int(input("Points: "))
+
+bar = ""                        # an empty string
 for count in range(points):
-    bar = bar + "#"
+    bar = bar + "*"             # add one star each time
 
-# Output
-print("Points: " + bar)
+print(f"Chart: {bar}")
 ```
-
-It prints:
 
 ```text
-Points: ######
+Points: 6
+Chart: ******
 ```
 
-This uses the "repeat a certain number of times" loop from above. `points` is how many times it runs, and `count` is never used.
+**Try it:** Ask for a name too, and print `Maya: ******`.
 
-(Python can also do `"#" * points`, which you saw in Step 1. The challenge asks you to use a `for` loop on purpose — graders want to see that you can write the loop.)
+---
 
-## break and continue
+## Which loop should I use?
 
-Two words that change how a loop runs:
+| Use | When | Examples |
+|---|---|---|
+| `for` | you know how many times | "Print 1 to 10." "Ask for 5 scores." |
+| `while` | it depends on what the user types | "Keep asking until they type 0." "Ask again until it's 1 to 10." |
 
-| What you type | What it does |
-|---|---|
-| `break` | Leave the loop right now. The program continues after the loop. |
-| `continue` | Skip the rest of this pass through the loop and go back to the top (the condition is checked again). |
-
-```python
-# Processing: find the first number from 1 to 50 that divides evenly by 7 and by 4
-for number in range(1, 51):
-    if number % 7 == 0 and number % 4 == 0:
-        print(f"Found it: {number}")
-        break                         # stop looking
-print("Search done.")
-
-# Processing: print 1 to 6 but skip 4
-for number in range(1, 7):
-    if number == 4:
-        continue                      # jump back to the top of the loop
-    print(number, end=" ")            # end=" " prints a space instead of a new line
-print()
-```
-
-It prints:
-
-```text
-Found it: 28
-Search done.
-1 2 3 5 6 
-```
-
-Use `break` and `continue` lightly. A loop with a clear condition is easier to read. But `continue` is handy in the challenge: when a guess is out of range, you print the message and `continue` so that guess isn't counted.
-
-## Random numbers
-
-Python's random number tools live in a **module** called `random`. A module is a file of ready-made code. To use it, put `import random` at the **top** of your program, then call its functions with `random.` in front.
-
-| What you type | What it gives you |
-|---|---|
-| `random.randint(1, 6)` | a random whole number from 1 to 6, **including** both 1 and 6 |
-| `random.choice(["a", "b", "c"])` | one random item from a list (lists are Step 6) |
-| `random.random()` | a random decimal from 0.0 up to (not including) 1.0 |
-
-Careful: `randint(1, 6)` **includes** the 6, but `range(1, 6)` does **not**. They work differently.
-
-```python
-import random
-
-# Processing: roll two dice
-die1 = random.randint(1, 6)
-die2 = random.randint(1, 6)
-
-# Output
-print(f"You rolled {die1} and {die2} for a total of {die1 + die2}.")
-```
-
-Example output (yours will be different every run):
-
-```
-You rolled 4 and 2 for a total of 6.
-```
-
-## A play again loop
-
-To let the user play more than once, put the whole game inside an **outer** `while` loop. The game's own loop goes **inside** it. That's called a **nested loop**.
-
-<!-- input: y|y|n -->
-```python
-import random
-
-rounds_played = 0
-again = "y"
-
-# Outer loop: one pass = one round
-while again == "y" or again == "Y":
-    rounds_played = rounds_played + 1
-
-    # Processing: flip a coin 3 times and count heads (inner loop)
-    heads = 0
-    for flip in range(3):
-        if random.randint(0, 1) == 1:
-            heads = heads + 1
-
-    # Output
-    print(f"Round {rounds_played}: {heads} heads out of 3")
-
-    # Input: ask at the BOTTOM of the outer loop
-    again = input("Flip again? (y/n): ")
-
-print(f"Rounds played: {rounds_played}")
-```
-
-Example output (the user typed `y`, `y`, `n`; the heads counts are random):
-
-```
-Round 1: 2 heads out of 3
-Flip again? (y/n): y
-Round 2: 1 heads out of 3
-Flip again? (y/n): y
-Round 3: 3 heads out of 3
-Flip again? (y/n): n
-Rounds played: 3
-```
-
-Notice: `again` is set to `"y"` **before** the loop so the first round always runs. Anything that must start fresh each round (like `heads = 0`) is set **inside** the outer loop. Anything that counts across all rounds (like `rounds_played`) is set **before** it.
-
-## Testing a program that uses random numbers
-
-How do you test a guessing game if you don't know the secret? Two ways:
-
-1. **Print the secret while testing.** Right after picking it, add a line:
-   ```python
-   print("TEST - secret is", secret)   # REMOVE before turning in
-   ```
-   Now you know the answer and can test "too low," "too high," and "got it."
-2. **Set it to a fixed number while testing.** Temporarily change `secret = random.randint(1, 100)` to `secret = 42`. Then the sample run below should match exactly.
-
-**Remove the test line (or put the `randint` back) before you turn it in.** A guessing game that shows the answer or always picks 42 doesn't meet requirement 2.
+---
 
 ## Common mistakes
 
-**1. The loop never ends**
-```python
-count = 1
-while count <= 5:
-    print(count)          # MISTAKE - count never changes
-```
-No error message — it prints `1` forever. Press **Ctrl+C** to stop it. Fix: add `count = count + 1` inside the loop.
+1. **The loop never ends.** In a `while` loop, something inside has to change the variable in the condition.
+2. **Adding 1 to a `for` loop variable yourself.** The `for` loop already does it. Delete that line.
+3. **Off by one.** `range(1, 10)` stops at 9. Use `range(1, 11)` for 1 to 10.
+4. **The `input()` is outside the loop**, so the same answer gets used every time.
+5. **The total starts inside the loop**, so it goes back to 0 every time. Put `total = 0` before the loop.
+6. **The final `print` is indented**, so it prints every time through the loop instead of once at the end.
 
-**2. Off by one with `range`**
-`for number in range(1, 10)` prints 1 to **9**, not 10. Fix: `range(1, 11)`.
+---
 
-**3. Resetting a counter in the wrong place**
-If `guesses = 0` is above the outer play-again loop, the second game keeps counting from where the first ended. Fix: reset per-game values **inside** the outer loop, at the start of each game.
-
-**4. Forgetting `import random`**
-Error: `NameError: name 'random' is not defined. Did you forget to import 'random'?`
-Fix: `import random` on one of the first lines of the program.
-
-**5. Asking for input before the loop but not inside it**
-```python
-guess = int(input("Your guess (1-100): "))
-while guess != secret:
-    print("Too low!")       # MISTAKE - never asks again, loops forever
-```
-Fix: the loop needs a new `input()` inside it, so the value can change.
-
-**6. Counting an out-of-range guess**
-If you add 1 to `guesses` before you check the range, `150` counts as a guess. Check the range first, and `continue` (or use `else`) so the counter isn't touched.
-
-## How this shows up at BPA
-- "Re-prompt on invalid input" is in every BPA Python test. That is a `while` loop. On the 2024 regional, out-of-range checks were worth 20 points each and the "forces the user to re-enter" part was graded every time.
-- The 2026 regional asked for scores for **every** player on **each of 9 holes** — a `for` loop inside a `for` loop.
-- The 2024 regional used random prices (`random.randint`) inside a range like $10–$20 inclusive. Know that `randint` includes both ends.
-- Loops instead of repeated code are part of the "Program Design & Structure" score. Copy-pasting the same lines 9 times loses points.
-
-## The challenge: Number Guessing Game
-
-The computer picks a secret number and the player keeps guessing. After each game, the player can play again.
-
-**Requirements**
-1. Header comment.
-2. The computer picks a secret whole number from 1 to 100.
-3. Keep asking `Your guess (1-100): ` until the player guesses it. Print `Too low!` or `Too high!` after each wrong guess.
-4. If a guess is below 1 or above 100, print `Please guess between 1 and 100.` — this does **not** count as a guess.
-5. When they get it, print `You got it in N guesses!` (use `guess` instead of `guesses` when N is 1).
-6. Use a `for` loop to print a guess chart: `Guess chart: ` followed by one `*` per guess.
-7. Ask `Play again? (y/n): `. `y` or `Y` starts a new game with a new secret number; anything else ends it.
-8. When the player stops, print `Thanks for playing! Games played: N`.
-9. Input / Processing / Output comments.
-
-**Sample run** (the secret number was 42 here — yours will be random)
-```
-I'm thinking of a number from 1 to 100.
-Your guess (1-100): 50
-Too high!
-Your guess (1-100): 150
-Please guess between 1 and 100.
-Your guess (1-100): 25
-Too low!
-Your guess (1-100): 42
-You got it in 3 guesses!
-Guess chart: ***
-Play again? (y/n): n
-Thanks for playing! Games played: 1
-```
-The first line, `I'm thinking of a number from 1 to 100.`, prints at the start of **every** game.
-
-Typing letters instead of a number will crash it. That's expected for now — Step 10 fixes it.
-
-**Hints**
-- Structure: an outer `while` loop for "play again," and an inner `while` loop for guessing.
-- The apostrophe in `I'm` is fine inside double quotes: `"I'm thinking..."`.
-- Inside the inner loop: get the guess → if out of range, print the message and `continue` → otherwise add 1 to the guess counter → print too low / too high.
-- Test with a fixed secret of 42 (see [Testing a program that uses random numbers](#testing-a-program-that-uses-random-numbers)), then put `randint` back.
-- Test a game where you get it on the first guess. It should say `You got it in 1 guess!`.
-
-## Turn it in
-1. In your `bpaPrep` repo make a folder `python_step04`.
-2. Put `step04.py` in it.
-3. Commit and push with GitHub Desktop.
-4. Private comment on the Classroom **BPA Friday** assignment: *Python step 4 done*.
-
-## Checklist
-- [ ] Program runs with no errors
-- [ ] Output matches the sample run when the secret is 42
-- [ ] Header comment with name, date, program, description
-- [ ] Input / Processing / Output comments
-- [ ] Secret is random again (test line removed)
-- [ ] Out-of-range guesses print the message and don't count
-- [ ] `1 guess` vs `N guesses`
-- [ ] Guess chart is built with a `for` loop
-- [ ] `y` and `Y` both play again; the game count is right
-- [ ] Pushed to `bpaPrep/python_step04`
+## Next steps
+1. Do the [Step 4 Practice](step04_Practice.md) problems.
+2. Keep the [Step 4 Study Guide](step04_StudyGuide.md) open while you work. Print it for BPA.

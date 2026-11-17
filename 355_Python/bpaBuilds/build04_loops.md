@@ -1,20 +1,62 @@
-# Step 04 Tasks — Loops (Python)
+# Builds for Step 04 — Loops (Python)
 
-**Do these after the [Step 4 lesson](step04_Lesson.md).** The lesson's Number Guessing Game is the walkthrough. These three tasks are extra practice with the same skills.
+These are BPA-style programs that use the Step 4 skills together with everything before it. They are bigger than the practice problems, and closer to what the BPA test asks for.
 
-Each task also uses skills from Steps 1–3: header comments, `input` with `int` and `float`, money to 2 decimals, and `if`/`elif`/`else`.
+**Do these after you finish Steps 1–7 (lessons and practice).** Use the [Step 4 Study Guide](../step04_loops/step04_StudyGuide.md) for help.
 
 ## Table of Contents
-- [Task A: Times Table Builder](#task-a-times-table-builder)
-- [Task B: Savings Goal Tracker](#task-b-savings-goal-tracker)
-- [Task C: Rock Paper Scissors](#task-c-rock-paper-scissors)
+- [Build 4A: Number Guessing Game](#build-4a-number-guessing-game)
+- [Build 4B: Times Table Builder](#build-4b-times-table-builder)
+- [Build 4C: Savings Goal Tracker](#build-4c-savings-goal-tracker)
+- [Build 4D: Rock Paper Scissors](#build-4d-rock-paper-scissors)
 - [Turn it in](#turn-it-in)
 - [Checklist](#checklist)
 
 ---
 
-## Task A: Times Table Builder
+## Build 4A: Number Guessing Game
+The computer picks a secret number and the player keeps guessing. After each game, the player can play again.
 
+**Requirements**
+1. Header comment.
+2. The computer picks a secret whole number from 1 to 100.
+3. Keep asking `Your guess (1-100): ` until the player guesses it. Print `Too low!` or `Too high!` after each wrong guess.
+4. If a guess is below 1 or above 100, print `Please guess between 1 and 100.` — this does **not** count as a guess.
+5. When they get it, print `You got it in N guesses!` (use `guess` instead of `guesses` when N is 1).
+6. Use a `for` loop to print a guess chart: `Guess chart: ` followed by one `*` per guess.
+7. Ask `Play again? (y/n): `. `y` or `Y` starts a new game with a new secret number; anything else ends it.
+8. When the player stops, print `Thanks for playing! Games played: N`.
+9. Input / Processing / Output comments.
+
+**Sample run** (the secret number was 42 here — yours will be random)
+```
+I'm thinking of a number from 1 to 100.
+Your guess (1-100): 50
+Too high!
+Your guess (1-100): 150
+Please guess between 1 and 100.
+Your guess (1-100): 25
+Too low!
+Your guess (1-100): 42
+You got it in 3 guesses!
+Guess chart: ***
+Play again? (y/n): n
+Thanks for playing! Games played: 1
+```
+The first line, `I'm thinking of a number from 1 to 100.`, prints at the start of **every** game.
+
+Typing letters instead of a number will crash it. That's expected for now — Step 10 fixes it.
+
+**Hints**
+- Structure: an outer `while` loop for "play again," and an inner `while` loop for guessing.
+- The apostrophe in `I'm` is fine inside double quotes: `"I'm thinking..."`.
+- Inside the inner loop: get the guess → if out of range, print the message and `continue` → otherwise add 1 to the guess counter → print too low / too high.
+- Test with a fixed secret of 42 (see [Testing a program that uses random numbers](../step04_loops/step04_StudyGuide.md#random-numbers)), then put `randint` back.
+- Test a game where you get it on the first guess. It should say `You got it in 1 guess!`.
+
+---
+
+## Build 4B: Times Table Builder
 Write a program that prints times tables. The user can make as many tables as they want.
 
 **Requirements**
@@ -74,8 +116,7 @@ Tables made: 2
 
 ---
 
-## Task B: Savings Goal Tracker
-
+## Build 4C: Savings Goal Tracker
 Write a program that tracks weekly deposits until a savings goal is reached.
 
 **Requirements**
@@ -137,14 +178,13 @@ Weeks: $
 - The prompt uses the **next** week number: `f"Week {weeks + 1} deposit: "`. Since `weeks` only goes up for good deposits, a bad deposit asks for the same week again.
 - Start `biggest` at `0.0`. Any good deposit is bigger than that.
 - After the loop ends, the goal is reached, so you do not need to check it again.
-- The chart is like the guess chart in the lesson challenge: start with `chart = ""` and add `"$"` each time through a `for` loop.
+- The chart is like the guess chart in Build 4A: start with `chart = ""` and add `"$"` each time through a `for` loop.
 
 **Test these too:** a goal reached exactly (no "went over" line), and a negative deposit like `-5`.
 
 ---
 
-## Task C: Rock Paper Scissors
-
+## Build 4D: Rock Paper Scissors
 Play Rock Paper Scissors against the computer. The first player to win 3 rounds wins the match. The player can play more than one match.
 
 **Requirements**
@@ -229,16 +269,25 @@ Matches won: 1
 ---
 
 ## Turn it in
-1. In your `bpaPrep` repo, use your `python_step04` folder.
-2. Save the tasks as `step04_taskA.py`, `step04_taskB.py`, and `step04_taskC.py`.
+1. In your `bpaPrep` repo, make a folder named `python_builds` (one folder for all builds).
+2. Save the builds as `build04A.py`, `build04B.py`, `build04C.py`, and `build04D.py`.
 3. Commit and push with GitHub Desktop.
-4. Private comment on the Classroom **BPA Friday** assignment: *Python step 4 tasks done*.
+4. Turn in the link on the Classroom assignment.
 
 ## Checklist
+- [ ] Program runs with no errors
+- [ ] Output matches the sample run when the secret is 42
+- [ ] Header comment with name, date, program, description
+- [ ] Input / Processing / Output comments
+- [ ] Secret is random again (test line removed)
+- [ ] Out-of-range guesses print the message and don't count
+- [ ] `1 guess` vs `N guesses`
+- [ ] Guess chart is built with a `for` loop
+- [ ] `y` and `Y` both play again; the game count is right
+- [ ] Pushed to `bpaPrep/python_builds`
 - [ ] All three programs run with no errors
 - [ ] Every sample run matches exactly (count the spaces)
-- [ ] I tested the extra inputs listed under Tasks A and B
-- [ ] Each program uses at least one `while` loop and one `for` loop (Task C only needs `while`)
+- [ ] I tested the extra inputs listed under Builds 4B and 4C
+- [ ] Each program uses at least one `while` loop and one `for` loop (Build 4D only needs `while`)
 - [ ] Input / Processing / Output comments in each file
-- [ ] `random.seed` is removed from Task C
-- [ ] Pushed to `bpaPrep/python_step04`
+- [ ] `random.seed` is removed from Build 4D

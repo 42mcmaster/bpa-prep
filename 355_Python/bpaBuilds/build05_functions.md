@@ -1,11 +1,11 @@
-# Step 05 Tasks — Functions (Python)
+# Builds for Step 05 — Functions (Python)
 
-**Do these after the [Step 5 lesson](step05_Lesson.md).** The lesson's Snack Bar with Functions is the walkthrough. These three tasks are extra practice with the same skills.
+These are BPA-style programs that use the Step 5 skills together with everything before it. They are bigger than the practice problems, and closer to what the BPA test asks for.
 
-Each task also uses skills from Steps 1–4: input, math, money to 2 decimals, `if`/`elif`/`else`, and loops.
+**Do these after you finish Steps 1–7 (lessons and practice).** Use the [Step 5 Study Guide](../step05_functions/step05_StudyGuide.md) for help.
 
-**Rules for every task in this step**
-- Every function has a comment with its **purpose**, **parameters**, and **return value** (docstring style from the lesson).
+**Rules for every build in this file**
+- Every function has a comment with its **purpose**, **parameters**, and **return value** (docstring style from the Step 5 study guide).
 - All the code that runs goes inside functions. The only code outside a function is the header comment, constants, the `def` lines, and these two lines at the very end:
   ```python
   if __name__ == "__main__":
@@ -14,16 +14,61 @@ Each task also uses skills from Steps 1–4: input, math, money to 2 decimals, `
 - Use the **exact** function names and parameters listed. BPA tests often name the functions they want.
 
 ## Table of Contents
-- [Task A: Temperature Converter](#task-a-temperature-converter)
-- [Task B: Class Grade Report](#task-b-class-grade-report)
-- [Task C: Phone Bill Calculator](#task-c-phone-bill-calculator)
+- [Build 5A: Snack Bar with Functions](#build-5a-snack-bar-with-functions)
+- [Build 5B: Temperature Converter](#build-5b-temperature-converter)
+- [Build 5C: Class Grade Report](#build-5c-class-grade-report)
+- [Build 5D: Phone Bill Calculator](#build-5d-phone-bill-calculator)
 - [Turn it in](#turn-it-in)
 - [Checklist](#checklist)
 
 ---
 
-## Task A: Temperature Converter
+## Build 5A: Snack Bar with Functions
+Rebuild the Step 2 snack bar so an order can have several items, using functions.
 
+**Requirements**
+1. Header comment.
+2. Rebuild the Step 2 snack bar so an order can have **several items**: after each item ask `Add another item? (y/n): `.
+3. Write these functions:
+   - `calculate_subtotal(price, quantity)` → returns price × quantity
+   - `calculate_tax(subtotal)` → returns subtotal × TAX_RATE
+   - `format_money(amount)` → returns text like `$12.04`
+   - `print_receipt(name, item_count, subtotal)` → prints the receipt (calls `calculate_tax` and `format_money`), returns nothing
+   - `main()` → asks the questions, keeps the running subtotal and item count, calls `print_receipt`
+4. Every function has a comment with its purpose, parameters, and return value.
+5. Input / Processing / Output comments.
+
+**Sample run (exact)**
+```
+Customer name: Jordan
+Item: Pretzel
+Price: 2.75
+Quantity: 3
+Add another item? (y/n): y
+Item: Lemonade
+Price: 1.50
+Quantity: 2
+Add another item? (y/n): n
+
+--- Receipt for Jordan ---
+Items ordered: 5
+Subtotal:  $11.25
+Tax (7%):  $0.79
+Total:     $12.04
+```
+`Items ordered` is the total quantity: 3 + 2.
+
+**Hints**
+- Keep `TAX_RATE = 0.07` as a constant at the top of the file, above the functions.
+- In `main`, set `order_subtotal = 0.0` and `item_count = 0` **before** the loop. Inside the loop, add to them.
+- The loop is like the "play again" loop in the Step 4 study guide: set the answer to `"y"` before the loop, ask at the bottom.
+- The item name is asked for but isn't printed on the receipt. You still need the `input("Item: ")` line so the prompts match.
+- `format_money(amount)` is one line: `return f"${amount:.2f}"`.
+- End the file with `if __name__ == "__main__":` and `main()`.
+
+---
+
+## Build 5B: Temperature Converter
 Write a program that converts temperatures between Fahrenheit and Celsius and says how the temperature feels.
 
 **Requirements**
@@ -84,8 +129,7 @@ Conversions done: 3
 
 ---
 
-## Task B: Class Grade Report
-
+## Build 5C: Class Grade Report
 Write a program that averages three test scores for each student in a class, then prints class stats.
 
 **Requirements**
@@ -153,8 +197,7 @@ Top student: Avery (91.7)
 
 ---
 
-## Task C: Phone Bill Calculator
-
+## Build 5D: Phone Bill Calculator
 Write a program a phone store clerk could use to print monthly bills for several customers, then a store summary.
 
 **Requirements**
@@ -225,16 +268,23 @@ Biggest bill:     Garcia Family ($156.88)
 ---
 
 ## Turn it in
-1. In your `bpaPrep` repo, use your `python_step05` folder.
-2. Save the tasks as `step05_taskA.py`, `step05_taskB.py`, and `step05_taskC.py`.
+1. In your `bpaPrep` repo, make a folder named `python_builds` (one folder for all builds).
+2. Save the builds as `build05A.py`, `build05B.py`, `build05C.py`, and `build05D.py`.
 3. Commit and push with GitHub Desktop.
-4. Private comment on the Classroom **BPA Friday** assignment: *Python step 5 tasks done*.
+4. Turn in the link on the Classroom assignment.
 
 ## Checklist
+- [ ] Program runs with no errors
+- [ ] Output matches the sample run
+- [ ] Header comment with name, date, program, description
+- [ ] Input / Processing / Output comments
+- [ ] All five functions, with the names given
+- [ ] Every function has a Purpose / Parameters / Returns comment
+- [ ] Calculation functions `return`; `print_receipt` prints
+- [ ] Program starts with `if __name__ == "__main__": main()`
+- [ ] Pushed to `bpaPrep/python_builds`
 - [ ] All three programs run with no errors
 - [ ] Every sample run matches exactly (count the spaces)
 - [ ] I tested the extra inputs listed under each task
-- [ ] Every function has a purpose / parameters / returns comment
 - [ ] Function names and parameters match the tables exactly
 - [ ] All code is inside functions, and the file ends with `if __name__ == "__main__":` and `main()`
-- [ ] Pushed to `bpaPrep/python_step05`

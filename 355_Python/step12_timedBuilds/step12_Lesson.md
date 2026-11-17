@@ -170,9 +170,10 @@ Use this as your final-ten-minutes checklist:
 Printed materials are allowed. Bring:
 1. The [355 Python reference guide](../355_Python_Programming_Reference_Guide.md).
 2. Your own `get_text`, `get_int`, and `get_yes_no` from Step 10, with their comments.
-3. Your Step 11 Club Manager — it has a class, a menu, file loading and saving, a leaderboard, and a search. Most of a regional is some version of these parts.
-4. Your Step 9 file reading and date/time code.
-5. The [What graders look for](#what-graders-look-for) checklist above.
+3. The study guides for Steps 4–11 (each step folder has one).
+4. Your Build 11A Club Manager (in `bpaBuilds`) — it has a class, a menu, file loading and saving, a leaderboard, and a search. Most of a regional is some version of these parts.
+5. Your Step 9 file reading and date/time code.
+6. The [What graders look for](#what-graders-look-for) checklist above.
 
 Practice **typing from your printouts** during timed builds, so you know where everything is on the page.
 
@@ -197,7 +198,7 @@ Your teacher will also hand out **printed** past BPA regional tests for more pra
 | Practice Task B — Score Report | [practice/TaskB_ScoreReport](practice/TaskB_ScoreReport/TaskB_ScoreReport_Problem.md) | write, read, and summarize a data file | (see the task) |
 | Practice Task C — Ticket Order | [practice/TaskC_TicketOrder](practice/TaskC_TicketOrder/TaskC_TicketOrder_Problem.md) | a class with `__str__`, random prices, try/except validation | (see the task) |
 
-Each build has its own instructions file (problem, starter, rubric). Do Timed Build 1 and 2 in order; the practice tasks can be done any time after Step 11. More about the practice tasks: [practice/README.md](practice/README.md).
+Each build has its own instructions file (problem, starter, rubric). Do Timed Build 1 and 2 in order; the practice tasks can be done any time after Step 11 and its builds. More about the practice tasks: [practice/README.md](practice/README.md).
 
 ## Turn it in
 1. In your `bpaPrep` repo make a folder for the build: `python_timed01`, `python_timed02` (or `python_practiceA`, `python_practiceB`, `python_practiceC` for the practice tasks).
